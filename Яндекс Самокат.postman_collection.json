@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "14ec322d-f349-4aa2-b9b8-c3e37d584402",
+		"name": "Яндекс Самокат",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22464231"
+	},
+	"item": [
+		{
+			"name": "Создать курьера",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    [\r\n    \"login\": \"ninja\",\r\n    \"password\": \"1234\",\r\n    \"firstName\": \"saske\"\r\n]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{самокат}}/api/v1/courier",
+					"host": [
+						"{{самокат}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить логин курьера",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"nanana\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{самокат}}api/v1/courier/login",
+					"host": [
+						"{{самокат}}api"
+					],
+					"path": [
+						"v1",
+						"courier",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Принять заказ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{самокат}}/api/v1/orders/accept/1?courierId=2",
+					"host": [
+						"{{самокат}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"accept",
+						"1"
+					],
+					"query": [
+						{
+							"key": "courierId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Завершить заказ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{самокат}}/api/v1/orders/finish/1",
+					"host": [
+						"{{самокат}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"finish",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать заказ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Максим\",\r\n    \"lastName\": \"Галкин\",\r\n    \"address\": \"улица Алых Роз\",\r\n    \"metroStation\": 4,\r\n    \"phone\": \"+7 800 355 35 35\",\r\n    \"rentTime\": 1,\r\n    \"deliveryDate\": \"2022-09-23\",\r\n    \"comment\": \"без комментариев\",\r\n    \"color\": [\r\n        \"BLACK\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{самокат}}api/v1/orders",
+					"host": [
+						"{{самокат}}api"
+					],
+					"path": [
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить курьера ",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{самокат}}api/v1/courier/2",
+					"host": [
+						"{{самокат}}api"
+					],
+					"path": [
+						"v1",
+						"courier",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить данные о заказе",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{самокат}}api/v1/orders/track?t=303739",
+					"host": [
+						"{{самокат}}api"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"track"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "303739"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отменить заказ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"track\": 779877\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{самокат}}/api/v1/orders/cancel",
+					"host": [
+						"{{самокат}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
